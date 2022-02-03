@@ -628,6 +628,16 @@ Jobs
   display: flex;
   justify-content: center;
 }
+.card {
+  min-height: 500px;
+  text-align: center;
+}
+.card .card-header {
+  background-color: salmon;
+}
+.carousel .carousel-indicators {
+  bottom: -55px;
+}
 @media screen and (min-width: 992px) {
   .jobs-center {
     width: 90vw;

@@ -57,7 +57,7 @@ const Testimonials = () => {
               {testimonials.map((item, index) => {
                 return (
                   <Carousel.Item key={index}>
-                    <Card border="success" style={{ width: "18rem" }}>
+                    <Card border="#ededed" style={{ width: "18rem" }}>
                       <Card.Header>
                         <GatsbyImage
                           image={getImage(
@@ -72,9 +72,7 @@ const Testimonials = () => {
                         <Card.Title>
                           <h4 style={{ color: "black" }}>{item.client}</h4>
                         </Card.Title>
-                        <Card.Text>
-                          <p>{item.quote}</p>
-                        </Card.Text>
+                        <Card.Text>{item.quote}</Card.Text>
                       </Card.Body>
                     </Card>
                   </Carousel.Item>
