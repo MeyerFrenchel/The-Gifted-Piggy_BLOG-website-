@@ -1,6 +1,5 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Card from "react-bootstrap/Card";
 
 const CardComponent = ({ testimonials }) => {
   console.log(testimonials);
@@ -15,8 +14,8 @@ const CardComponent = ({ testimonials }) => {
     >
       {testimonials.map((test, index) => {
         return (
-          <Card border="#ededed" style={{ width: "18rem" }}>
-            <Card.Header>
+          <div style={{ width: "18rem" }}>
+            <div>
               <GatsbyImage
                 image={getImage(
                   test.avatar.localFile.childImageSharp.gatsbyImageData
@@ -24,14 +23,14 @@ const CardComponent = ({ testimonials }) => {
                 alt="First slide"
                 className="avatar-pic"
               />
-            </Card.Header>
-            <Card.Body>
-              <Card.Title>
+            </div>
+            <div>
+              <div>
                 <h4 style={{ color: "black" }}>{test.client}</h4>
-              </Card.Title>
-              <Card.Text>{test.quote}</Card.Text>
-            </Card.Body>
-          </Card>
+              </div>
+              <div>{test.quote}</div>
+            </div>
+          </div>
         );
       })}
     </div>

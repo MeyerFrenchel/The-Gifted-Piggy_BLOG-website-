@@ -629,7 +629,7 @@ Jobs
   justify-content: center;
 }
 .card {
-  min-height: 500px;
+  /* min-height: 500px; */
   text-align: center;
 }
 .card .card-header {

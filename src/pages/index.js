@@ -13,7 +13,6 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Testimonials from "../components/Testimonials";
 import Projects from "../components/Products";
-import TestSlider from "../components/TestSlider";
 
 const IndexPage = ({ data }) => {
   const {
