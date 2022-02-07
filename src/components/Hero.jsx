@@ -10,9 +10,16 @@ const Hero = () => {
       <section className="section-center hero-center">
         <article className="hero-info">
           <div>
+            <div className="store-name">The Gifted Piggy</div>
             <div className="underline"></div>
-            <h1>i'm john</h1>
-            <h4>freelance web and mobile UI/UX Designer</h4>
+            <h1 className="title-quote">
+              “Yesterday is history, tomorrow is a mystery , but today is a
+              gift, which is why we call it the present.”
+            </h1>
+            <h4>
+              Cadouri artizanale, personalizate si facute cu dragoste pentru cei
+              dragi!
+            </h4>
             <Link to="/contact" className="btn">
               contact me
             </Link>

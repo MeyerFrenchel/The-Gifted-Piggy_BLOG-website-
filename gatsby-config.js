@@ -23,5 +23,15 @@ module.exports = {
         //If using single types place them in this array.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Indie Flower`,
+          `source sans pro\:400`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
   ],
 };

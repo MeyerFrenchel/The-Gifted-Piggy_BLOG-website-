@@ -8,7 +8,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import { FaVrCardboard } from "react-icons/fa";
-import CardComponent from "./CardComponent";
 
 export const query = graphql`
   {
@@ -41,14 +40,14 @@ const Testimonials = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 4,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 768 },
       items: 2,
     },
     mobile: {
@@ -59,47 +58,33 @@ const Testimonials = () => {
 
   console.log(testimonials);
 
-  const splitArray = (arr, len) => {
-    let chunks = [],
-      i = 0,
-      n = arr.length;
-    while (i < n) {
-      chunks.push(arr.slice(i, (i += len)));
-    }
-    console.log(chunks, "chunks");
-    return chunks;
-  };
-
-  const splitTestimonials = splitArray(testimonials, 3);
-
   return (
     <section className="section jobs">
       <Title title="Testimoniale" />
-      <div className="job-info">
-        {/* job info */}
-        <article className="job-info">
-          <Carousel showDots={true} responsive={responsive}>
-            {testimonials.map((test, index) => {
-              return (
-                <div key={index}>
-                  <GatsbyImage
-                    image={getImage(
-                      test.avatar.localFile.childImageSharp.gatsbyImageData
-                    )}
-                    alt="First slide"
-                    className="avatar-pic"
-                  />
 
-                  <div>
-                    <h4 style={{ color: "black" }}>{test.client}</h4>
-                  </div>
-                  <div>{test.quote}</div>
+      <article className="job-info">
+        <Carousel showDots={true} responsive={responsive}>
+          {testimonials.map((test, index) => {
+            return (
+              <div className="card" key={index}>
+                <GatsbyImage
+                  image={getImage(
+                    test.avatar.localFile.childImageSharp.gatsbyImageData
+                  )}
+                  alt="First slide"
+                  className="avatar-pic"
+                />
+
+                <div className="card-name">
+                  <h4 style={{ color: "black" }}>{test.client}</h4>
                 </div>
-              );
-            })}
-          </Carousel>
-        </article>
-      </div>
+                <div className="card-description">{test.quote}</div>
+              </div>
+            );
+          })}
+        </Carousel>
+      </article>
+
       <Link to="/about" className="btn center-btn">
         more info
       </Link>
