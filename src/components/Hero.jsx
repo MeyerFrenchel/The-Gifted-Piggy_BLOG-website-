@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import socialLinks from "../constants/social_links";
 // import heroImg from "../assets/images/hero.svg"
 import { StaticImage } from "gatsby-plugin-image";
+import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
@@ -13,8 +14,17 @@ const Hero = () => {
             <div className="store-name">The Gifted Piggy</div>
             <div className="underline"></div>
             <h1 className="title-quote">
-              “Yesterday is history, tomorrow is a mystery , but today is a
-              gift, which is why we call it the present.”
+              <Typewriter
+                onInit={typewriter => {
+                  typewriter
+                    .typeString(
+                      `“Yesterday is history, tomorrow is a mystery , but today is a
+    gift, which is why we call it the present.”`
+                    )
+
+                    .start();
+                }}
+              />
             </h1>
             <h4>
               Cadouri artizanale, personalizate si facute cu dragoste pentru cei
